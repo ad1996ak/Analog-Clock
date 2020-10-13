@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <title>Clock</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 3px 3px;
+        }
+
+        body {
+            background: linear-gradient(to left, lightblue, lightgreen, lightyellow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .clock {
+            width: 500px;
+            height: 250px;
+            text-align: center;
+            justify-content: center;
+            background-color: black;
+            border: 5px solid white;
+            position: relative;
+            display: flex;
+            
+
+        }
+
+        #time {
+            font-size: 8rem;
+            color: red;
+            
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <h1 class="display-4"><span id="time"></span></h1>
+    </div>
+    <script>
+
+        let a;
+        let date;
+        let time;
+        setInterval(() => {
+            a = new Date();
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time; 
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
